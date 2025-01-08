@@ -1,17 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/constant.dart';
-import 'package:weather_app/core/utils/widget/api_service.dart';
-import 'package:weather_app/features/home/persentation/data/manger/weather_service_api/weather_service_cubit.dart';
+import 'package:weather_app/core/components/api_service.dart';
+import 'package:weather_app/core/components/image_manger.dart';
+import 'package:weather_app/home/data/manger/weather_service_api/weather_service_cubit.dart';
+import 'package:weather_app/home/pages/home_page/widget/list_view_container_widget.dart';
+import 'package:weather_app/home/pages/home_page/widget/text_field_widget.dart';
+import 'package:weather_app/home/pages/home_page/widget/text_search_details_widget.dart';
+import 'package:weather_app/home/pages/home_page/widget/today_weather_widget.dart';
 
-import 'package:weather_app/features/search/views/text_field_widget.dart';
-import 'package:weather_app/features/search/views/widgets/days_weather_details.dart';
-import 'package:weather_app/features/search/views/widgets/text_search_details.dart';
-import 'package:weather_app/features/search/views/widgets/today_weather.dart';
-
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+@RoutePage()
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +24,13 @@ class HomeView extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(kBackground),
+                image: AssetImage(ImageManger.kBackground),
                 fit: BoxFit.fill,
               ),
             ),
             child: Column(
               children: [
-                const TextFieldSearchView(),
+                const TextFieldWidget(),
                 const SizedBox(height: 25),
                 Expanded(child:
                     BlocBuilder<WeatherServiceCubit, WeatherServiceState>(
@@ -37,17 +38,17 @@ class HomeView extends StatelessWidget {
                     if (state is WeatherServiceSuccess) {
                       return ListView(
                         children: [
-                          TodeySearchDetails(
+                          TodeyWeatherWidget(
                             weatherModel: state.weatherModel,
                           ),
                           const SizedBox(height: 135),
-                          TextSearchDetails(
+                          TextSearchDetailsWidget(
                             weatherModel: state.weatherModel,
                           ),
                           const SizedBox(
                             height: 40,
                           ),
-                          ListViewContainer(
+                          ListViewContainerWidget(
                             weatherModel: state.weatherModel,
                           ),
                           const SizedBox(height: 30),
@@ -67,7 +68,6 @@ class HomeView extends StatelessWidget {
                             color: Colors.red, fontWeight: FontWeight.bold),
                       );
                     }
-
                     return const Center(
                       child: Text(
                         'Start Search For City',

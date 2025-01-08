@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:weather_app/core/utils/widget/app_router.dart';
+import 'package:weather_app/core/router/router.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -13,7 +12,7 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: AppRouter.router,
+      routerConfig: router.config(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         textTheme: GoogleFonts.tekturTextTheme(

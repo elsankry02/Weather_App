@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/features/home/persentation/data/manger/weather_service_api/weather_service_cubit.dart';
+import 'package:weather_app/home/data/manger/weather_service_api/weather_service_cubit.dart';
 
-class TextFieldSearchView extends StatelessWidget {
-  const TextFieldSearchView({super.key});
+class TextFieldWidget extends StatelessWidget {
+  const TextFieldWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

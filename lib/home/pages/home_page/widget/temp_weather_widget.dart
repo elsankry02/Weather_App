@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
-import 'package:weather_app/features/search/views/widgets/min_max_temp.dart';
+import 'package:weather_app/home/data/models/weather_model.dart';
+import 'package:weather_app/home/pages/home_page/widget/min_max_temp_widget.dart';
 
-class TempWeather extends StatelessWidget {
-  const TempWeather({
+class TempWeatherWidget extends StatelessWidget {
+  const TempWeatherWidget({
     super.key,
     required this.day,
     required this.weatherModel,
@@ -20,8 +20,10 @@ class TempWeather extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MinMaxTemp(weather: 'Max', number: day.day!.maxtempC!.toInt()),
-            MinMaxTemp(weather: 'Min', number: day.day!.mintempC!.toInt()),
+            MinMaxTempWidget(
+                weather: 'Max', number: day.day!.maxtempC!.toInt()),
+            MinMaxTempWidget(
+                weather: 'Min', number: day.day!.mintempC!.toInt()),
             Text(
               '${weatherModel.forecast!.forecastday![1].day!.condition!.text}',
               style: const TextStyle(color: Colors.grey),

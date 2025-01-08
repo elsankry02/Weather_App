@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
-import 'package:weather_app/features/search/views/widgets/temp_weather.dart';
+import 'package:weather_app/home/data/models/weather_model.dart';
+import 'package:weather_app/home/pages/home_page/widget/temp_weather_widget.dart';
 
-class ListViewContainer extends StatelessWidget {
-  const ListViewContainer({
+class ListViewContainerWidget extends StatelessWidget {
+  const ListViewContainerWidget({
     super.key,
     required this.weatherModel,
   });
@@ -52,7 +52,7 @@ class ListViewContainer extends StatelessWidget {
                       ),
                     ],
                   ),
-                  TempWeather(day: day, weatherModel: weatherModel),
+                  TempWeatherWidget(day: day, weatherModel: weatherModel),
                   Row(
                     children: [
                       const Icon(

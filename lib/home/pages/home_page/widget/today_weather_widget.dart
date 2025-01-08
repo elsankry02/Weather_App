@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
+import 'package:weather_app/home/data/models/weather_model.dart';
 
-class TodeySearchDetails extends StatelessWidget {
-  const TodeySearchDetails({super.key, required this.weatherModel});
+class TodeyWeatherWidget extends StatelessWidget {
+  const TodeyWeatherWidget({super.key, required this.weatherModel});
   final WeatherModel weatherModel;
 
   @override
