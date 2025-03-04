@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:weather_app/home/data/models/weather_model.dart';
+import 'package:weather_app/data/models/weather_model.dart';
 
 class ApiService {
   final String _baseUrl = 'http://api.weatherapi.com/v1';
