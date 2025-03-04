@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/data/models/weather_model.dart';
+import 'package:weather_app/models/weather_model.dart';
 
 class TextSearchDetailsWidget extends StatelessWidget {
   const TextSearchDetailsWidget({super.key, required this.weatherModel});
