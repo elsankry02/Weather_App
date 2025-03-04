@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/data/manger/weather_service_api/weather_service_cubit.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:weather_app/providers/weather_provider/weather_provider.dart';
 
-class TextFieldWidget extends StatelessWidget {
+class TextFieldWidget extends ConsumerWidget {
   const TextFieldWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return TextField(
       onSubmitted: (value) {
-        context.read<WeatherServiceCubit>().fetchWeather(cityName: value);
+        ref.read(searchProvider.notifier).state = value;
       },
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
