@@ -14,7 +14,7 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final getWeatherProvider = ref.watch(weatherProvider);
+    final getWeatherProvider = ref.watch(weatherModelProvider);
     return Scaffold(
       body: SafeArea(
         child: Container(

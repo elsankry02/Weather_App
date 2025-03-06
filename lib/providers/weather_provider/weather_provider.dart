@@ -6,7 +6,7 @@ final searchProvider = StateProvider<String>((ref) {
   return "";
 });
 
-final weatherProvider = FutureProvider<WeatherModel>((ref) async {
+final weatherModelProvider = FutureProvider<WeatherModel>((ref) async {
   //
   final service = ref.read(weatherServiceProvider);
   //
