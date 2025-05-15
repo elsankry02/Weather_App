@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather_app/core/components/image_manger.dart';
-import 'package:weather_app/pages/home/widget/list_view_container_widget.dart';
-import 'package:weather_app/pages/home/widget/text_field_widget.dart';
-import 'package:weather_app/pages/home/widget/text_search_details_widget.dart';
-import 'package:weather_app/pages/home/widget/today_weather_widget.dart';
+import 'package:weather_app/components/image_manger.dart';
 import 'package:weather_app/providers/weather_provider/weather_provider.dart';
+import 'package:weather_app/views/home_page/widget/list_view_container_widget.dart';
+import 'package:weather_app/views/home_page/widget/text_field_widget.dart';
+import 'package:weather_app/views/home_page/widget/text_search_details_widget.dart';
+import 'package:weather_app/views/home_page/widget/today_weather_widget.dart';
 
 @RoutePage()
 class HomePage extends ConsumerWidget {

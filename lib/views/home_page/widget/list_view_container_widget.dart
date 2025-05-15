@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/pages/home/widget/temp_weather_widget.dart';
+import 'package:weather_app/views/home_page/widget/temp_weather_widget.dart';
 
 class ListViewContainerWidget extends StatelessWidget {
   const ListViewContainerWidget({
