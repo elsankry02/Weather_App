@@ -1,4 +1,3 @@
-<!-- Uploading "CoffeeShop.jpg"... -->
 
 # Weather App ☁️
 
