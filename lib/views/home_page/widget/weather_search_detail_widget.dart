@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/weather_model.dart';
 
-class TextSearchDetailsWidget extends StatelessWidget {
-  const TextSearchDetailsWidget({super.key, required this.weatherModel});
+class WeatherSearchDetailWidget extends StatelessWidget {
+  const WeatherSearchDetailWidget({super.key, required this.weatherModel});
   final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {

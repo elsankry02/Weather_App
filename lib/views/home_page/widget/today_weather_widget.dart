@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app/components/image_manger.dart';
 import 'package:weather_app/models/weather_model.dart';
 
-class TodeyWeatherWidget extends StatelessWidget {
-  const TodeyWeatherWidget({super.key, required this.weatherModel});
+class TodayWeatherWidget extends StatelessWidget {
+  const TodayWeatherWidget({super.key, required this.weatherModel});
   final WeatherModel weatherModel;
 
   @override
   Widget build(BuildContext context) {
+    final currentWeatherCondition = weatherModel.current!.condition!;
+    final weatherLocation = weatherModel.location!;
     return Container(
       height: 250,
       width: double.infinity,
@@ -15,7 +18,7 @@ class TodeyWeatherWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         image: const DecorationImage(
-          image: AssetImage('image/background.jpg'),
+          image: AssetImage(ImageManger.kBackground),
         ),
       ),
       child: Column(
@@ -44,6 +47,7 @@ class TodeyWeatherWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
+                      //!
                       Text(
                         '${weatherModel.current!.tempC!.toInt()}',
                         style: const TextStyle(fontSize: 38),
@@ -54,15 +58,17 @@ class TodeyWeatherWidget extends StatelessWidget {
                       ),
                     ],
                   ),
+                  //!
                   Text(
-                    '${weatherModel.current!.condition!.text}',
+                    '${currentWeatherCondition.text}',
                     style: const TextStyle(color: Colors.grey, fontSize: 22),
                   ),
                 ],
               ),
+              //!
               Image.network(
-                fit: BoxFit.fill,
-                "https:${weatherModel.current!.condition!.icon}",
+                fit: BoxFit.cover,
+                "https:${currentWeatherCondition.icon}",
                 height: 100,
                 width: 100,
               ),
@@ -74,10 +80,13 @@ class TodeyWeatherWidget extends StatelessWidget {
                 Icons.location_on,
                 color: Colors.amber,
               ),
-              Text(
-                '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+              //!
+              Expanded(
+                child: Text(
+                  '${weatherLocation.name}, ${weatherLocation.region}, ${weatherLocation.country}',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],

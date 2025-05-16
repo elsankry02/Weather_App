@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app/components/image_manger.dart';
 import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/views/home_page/widget/temp_weather_widget.dart';
+import 'package:weather_app/views/home_page/widget/temp_info_widget.dart';
 
-class ListViewContainerWidget extends StatelessWidget {
-  const ListViewContainerWidget({
+class WeatherListViewWidget extends StatelessWidget {
+  const WeatherListViewWidget({
     super.key,
     required this.weatherModel,
   });
@@ -19,7 +20,6 @@ class ListViewContainerWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final day = weatherModel.forecast!.forecastday![index];
-
           return Padding(
             padding: const EdgeInsets.only(right: 15),
             child: Container(
@@ -27,7 +27,7 @@ class ListViewContainerWidget extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage('image/background.jpg'),
+                  image: AssetImage(ImageManger.kBackground),
                 ),
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -52,18 +52,23 @@ class ListViewContainerWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  TempWeatherWidget(day: day, weatherModel: weatherModel),
+                  TempInfoWidget(
+                    weatherModel: weatherModel,
+                    index: index,
+                  ),
                   Row(
                     children: [
                       const Icon(
                         Icons.location_on,
                         color: Colors.amber,
                       ),
-                      Text(
-                        overflow: TextOverflow.ellipsis,
-                        '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: Text(
+                          overflow: TextOverflow.ellipsis,
+                          '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],

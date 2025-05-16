@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/providers/weather_provider/weather_provider.dart';
 
-class TextFieldWidget extends ConsumerWidget {
-  const TextFieldWidget({super.key});
+class WeatherTextFieldWidget extends ConsumerWidget {
+  const WeatherTextFieldWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

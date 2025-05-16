@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/components/image_manger.dart';
 import 'package:weather_app/providers/weather_provider/weather_provider.dart';
-import 'package:weather_app/views/home_page/widget/list_view_container_widget.dart';
-import 'package:weather_app/views/home_page/widget/text_field_widget.dart';
-import 'package:weather_app/views/home_page/widget/text_search_details_widget.dart';
 import 'package:weather_app/views/home_page/widget/today_weather_widget.dart';
+import 'package:weather_app/views/home_page/widget/weather_list_view_widget.dart';
+import 'package:weather_app/views/home_page/widget/weather_search_detail_widget.dart';
+import 'package:weather_app/views/home_page/widget/weather_text_field_widget.dart';
 
 @RoutePage()
 class HomePage extends ConsumerWidget {
@@ -14,7 +14,8 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final getWeatherProvider = ref.watch(weatherModelProvider);
+    final weatherProvider = ref.watch(weatherModelProvider);
+    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -22,33 +23,41 @@ class HomePage extends ConsumerWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(ImageManger.kBackground),
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           child: Column(
             children: [
-              const TextFieldWidget(),
-              const SizedBox(height: 25),
+              //! WeatherTextFieldWidget
+              const WeatherTextFieldWidget(),
+              //
+              SizedBox(
+                height: h * 0.050,
+              ),
+              //
               ref.watch(searchProvider).isNotEmpty
-                  ? getWeatherProvider.when(
+                  ? weatherProvider.when(
                       data: (data) {
                         return Expanded(
                           child: ListView(
                             children: [
-                              TodeyWeatherWidget(
+                              TodayWeatherWidget(
                                 weatherModel: data,
                               ),
-                              const SizedBox(height: 135),
-                              TextSearchDetailsWidget(
+                              //
+                              SizedBox(height: h * 0.15),
+                              //! Weather Search Detail Widget
+                              WeatherSearchDetailWidget(
                                 weatherModel: data,
                               ),
-                              const SizedBox(
-                                height: 40,
+                              //
+                              SizedBox(
+                                height: h * 0.050,
                               ),
-                              ListViewContainerWidget(
+                              //! Weather List View Widget
+                              WeatherListViewWidget(
                                 weatherModel: data,
                               ),
-                              const SizedBox(height: 30),
                             ],
                           ),
                         );
@@ -70,11 +79,15 @@ class HomePage extends ConsumerWidget {
                         );
                       },
                     )
-                  : const Text(
-                      'Start Search For City',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                  : const Expanded(
+                      child: Center(
+                        child: Text(
+                          'Start Search For City',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
             ],

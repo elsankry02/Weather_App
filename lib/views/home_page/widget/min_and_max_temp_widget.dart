@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MinMaxTempWidget extends StatelessWidget {
-  const MinMaxTempWidget(
+class MinAndMaxTempWidget extends StatelessWidget {
+  const MinAndMaxTempWidget(
       {super.key, required this.weather, required this.number});
 
   final String weather;
