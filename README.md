@@ -1,5 +1,6 @@
-
 # Weather App ☁️
+
+![Image](https://github.com/user-attachments/assets/b5c3dce0-a062-4c1a-b450-0482f4ac657e)
 
 ## Description
 
