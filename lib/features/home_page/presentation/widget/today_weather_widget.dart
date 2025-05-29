@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/components/image_manger.dart';
-import 'package:weather_app/models/weather_model.dart';
+import 'package:weather_app/core/components/image_manger.dart';
+import 'package:weather_app/features/home_page/data/models/weather_model.dart';
 
 class TodayWeatherWidget extends StatelessWidget {
   const TodayWeatherWidget({super.key, required this.weatherModel});

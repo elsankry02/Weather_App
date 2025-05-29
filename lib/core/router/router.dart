@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:weather_app/views/home_page/home_page.dart';
-import 'package:weather_app/views/splash_page/splash_page.dart';
+import 'package:weather_app/features/home_page/presentation/views/home_page.dart';
+import 'package:weather_app/features/splash_page/presentation/view/splash_page.dart';
 
 part 'router.gr.dart';
 
