@@ -5,7 +5,8 @@
 ##  🌤️ Weather App Overview
 A Flutter-based mobile application designed to provide users with accurate and real-time weather information. The app emphasizes clean architecture and modern state management to ensure scalability and maintainability.
 
-##🛠️ Core Technologies
+## 🛠️ Core Technologies
+
 **Flutter & Dart:** The app is developed using Flutter, ensuring a smooth and responsive cross-platform experience.
 
 **MVVM Architecture:** Adopts the Model-View-ViewModel pattern to separate concerns and enhance code readability.
@@ -14,7 +15,8 @@ A Flutter-based mobile application designed to provide users with accurate and r
 
 **AutoRoute:** Utilizes AutoRoute for type-safe and declarative routing, simplifying navigation.
 
-##🔍 Key Features
+## 🔍 Key Features
+
 **Real-Time Weather Data:** Fetches and displays current weather conditions using a reliable API.
 
 **Location-Based Forecasts:** Provides weather information based on the user's location.
@@ -24,5 +26,6 @@ A Flutter-based mobile application designed to provide users with accurate and r
 **Search Functionality:** Allows users to search for weather information by city name.
 
 **Responsive Design:** Ensures optimal display across various device sizes and orientations.
+
 
 
