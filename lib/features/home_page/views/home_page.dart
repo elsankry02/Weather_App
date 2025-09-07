@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/core/constant/image_manger.dart';
-import 'package:weather_app/features/home_page/data/weather_provider/weather_provider.dart';
-import 'package:weather_app/features/home_page/presentation/widget/today_weather_widget.dart';
-import 'package:weather_app/features/home_page/presentation/widget/weather_list_view_widget.dart';
-import 'package:weather_app/features/home_page/presentation/widget/weather_search_detail_widget.dart';
-import 'package:weather_app/features/home_page/presentation/widget/weather_text_field_widget.dart';
+import 'package:weather_app/features/data/provider/weather_provider/weather_provider.dart';
+import 'package:weather_app/features/home_page/widget/today_weather_widget.dart';
+import 'package:weather_app/features/home_page/widget/weather_list_view_widget.dart';
+import 'package:weather_app/features/home_page/widget/weather_search_detail_widget.dart';
+import 'package:weather_app/features/home_page/widget/weather_text_field_widget.dart';
 
 @RoutePage()
 class HomePage extends ConsumerWidget {
@@ -50,7 +50,7 @@ class HomePage extends ConsumerWidget {
                               WeatherSearchDetailWidget(
                                 weatherModel: data,
                               ),
-                              //
+
                               SizedBox(
                                 height: h * 0.050,
                               ),

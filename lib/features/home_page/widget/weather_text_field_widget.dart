@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather_app/features/home_page/data/weather_provider/weather_provider.dart';
+import 'package:weather_app/features/data/provider/weather_provider/weather_provider.dart';
 
 class WeatherTextFieldWidget extends ConsumerWidget {
   const WeatherTextFieldWidget({super.key});
